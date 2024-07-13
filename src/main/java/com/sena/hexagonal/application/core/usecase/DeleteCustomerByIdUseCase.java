@@ -1,9 +1,10 @@
 package com.sena.hexagonal.application.core.usecase;
 
+import com.sena.hexagonal.application.ports.in.DeleteCustomerByIdInputPort;
 import com.sena.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.sena.hexagonal.application.ports.out.DeleteCustomerByIdOutputPort;
 
-public class DeleteCustomerByIdUseCase {
+public class DeleteCustomerByIdUseCase implements DeleteCustomerByIdInputPort {
     private final FindCustomerByIdInputPort findCustomerByIdInputPort;
     private final DeleteCustomerByIdOutputPort deleteCustomerByIdOutputPort;
 
@@ -14,7 +15,8 @@ public class DeleteCustomerByIdUseCase {
         this.deleteCustomerByIdOutputPort = deleteCustomerByIdOutputPort;
     }
 
-    private void delete (String id){
+    @Override
+    public void delete (String id){
         findCustomerByIdInputPort.find(id);
         deleteCustomerByIdOutputPort.delete(id);
     }

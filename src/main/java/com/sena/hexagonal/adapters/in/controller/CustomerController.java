@@ -3,6 +3,7 @@ package com.sena.hexagonal.adapters.in.controller;
 import com.sena.hexagonal.adapters.in.controller.mapper.CustomerMapper;
 import com.sena.hexagonal.adapters.in.controller.request.CustomerRequest;
 import com.sena.hexagonal.adapters.in.controller.response.CustomerResponse;
+import com.sena.hexagonal.application.ports.in.DeleteCustomerByIdInputPort;
 import com.sena.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.sena.hexagonal.application.ports.in.InsertCustomerInputPort;
 import com.sena.hexagonal.application.ports.in.UpdateCustomerInputPort;
@@ -23,6 +24,9 @@ public class CustomerController {
 
     @Autowired
     private UpdateCustomerInputPort updateCustomerInputPort;
+
+    @Autowired
+    private DeleteCustomerByIdInputPort deleteCustomerByIdInputPort;
     @Autowired
     private CustomerMapper customerMapper;
 
@@ -45,6 +49,12 @@ public class CustomerController {
         var customer = customerMapper.toCustomer(request);
         customer.setId(id);
         updateCustomerInputPort.update(customer, request.getZipCode());
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping ("/{id}")
+    public ResponseEntity<Void> delete (@PathVariable final String id){
+        deleteCustomerByIdInputPort.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
