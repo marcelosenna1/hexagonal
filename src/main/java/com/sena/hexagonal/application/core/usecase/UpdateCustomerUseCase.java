@@ -5,14 +5,14 @@ import com.sena.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.sena.hexagonal.application.ports.out.FindAddressByZipCodeOutputPort;
 import com.sena.hexagonal.application.ports.out.UpdateCustomerOutputPort;
 
-public class UpdateCustomerUpdate {
+public class UpdateCustomerUseCase {
 
     private final FindCustomerByIdInputPort findCustomerByIdInputPort;
     private final FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort;
 
     private final UpdateCustomerOutputPort updateCustomerOutputPort;
 
-    public UpdateCustomerUpdate(
+    public UpdateCustomerUseCase(
             FindCustomerByIdInputPort findCustomerByIdInputPort,
             FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort,
             UpdateCustomerOutputPort updateCustomerOutputPort) {
