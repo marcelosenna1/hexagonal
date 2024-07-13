@@ -4,11 +4,11 @@ import com.sena.hexagonal.application.core.domain.Customer;
 import com.sena.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.sena.hexagonal.application.ports.out.FindCustomerByIdOutputPort;
 
-public class FindCustomerByUseCase implements FindCustomerByIdInputPort {
+public class FindCustomerByIdUseCase implements FindCustomerByIdInputPort {
 
     private final FindCustomerByIdOutputPort FindCustomerByIdOutputPort;
 
-    public FindCustomerByUseCase(FindCustomerByIdOutputPort findCustomerByIdOutputPort) {
+    public FindCustomerByIdUseCase(FindCustomerByIdOutputPort findCustomerByIdOutputPort) {
         this.FindCustomerByIdOutputPort = findCustomerByIdOutputPort;
     }
 
