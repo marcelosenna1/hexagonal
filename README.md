@@ -9,7 +9,7 @@ Este projeto é uma aplicação desenvolvida utilizando a arquitetura hexagonal 
 ## Tecnologias Utilizadas
 
 - Java 17 como linguagem de programação base.
-- Spring Boot 3.2.5 para configuração e bootstrap da aplicação.
+- Spring Boot 3.2.5.
 - Spring Data MongoDB para persistência de dados.
 - Spring Boot Starter Validation para validação de dados.
 - Spring Boot Starter Web para desenvolvimento de APIs RESTful.
